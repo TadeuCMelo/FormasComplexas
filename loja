@@ -1,0 +1,57 @@
+#include <iostream>
+
+using namespace std;
+
+class Produtos {
+    private:
+        string nome;
+        double preco;
+
+    public:
+        Produtos(string n, double p) : nome(n) {
+            setPreco(p);
+        }
+        void setPreco(int valor){
+            if (valor < 0){
+                preco = 0;
+                cout << "o preço n pd ser menor q 0" << endl;
+            }else{
+                preco = valor;
+            }
+        }
+        void mostrar() {
+            cout << "Nome: " << nome << " | Preco: " << preco << "€" << endl;
+        }
+        };
+
+class Livros : public Produtos{
+    private:
+        string autor;
+    public:
+        Livros(string n, double p,string a) : Produtos(n,p), autor(a){}
+
+        void mostrarDetalhes(){
+            mostrar();
+        }
+};
+
+class Smartphone : public Produtos{
+    private:
+        string marca;
+
+    public:
+    Smartphone(string n, double p, string m) : Produtos(n,p), marca(m){}
+
+    void mostrarDetalhes(){
+        mostrar();
+    }
+};
+
+int main(){
+    Livros peixes("Peixes", -15, "Tadeu");
+    Smartphone iphone1("Iphone 19", 2500, "Iphone");
+
+    peixes.mostrarDetalhes();
+    iphone1.mostrarDetalhes();
+
+}
