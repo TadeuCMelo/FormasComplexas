@@ -20,7 +20,7 @@ class Produtos {
             }
         }
         void mostrar() {
-            cout << "Nome: " << nome << " | Preco: " << preco << "€" << endl;
+            cout << "Nome: " << nome << " | Preco: " << preco << "€";
         }
         };
 
@@ -32,6 +32,7 @@ class Livros : public Produtos{
 
         void mostrarDetalhes(){
             mostrar();
+            cout << " | Autor: " << autor << endl;
         }
 };
 
@@ -44,6 +45,7 @@ class Smartphone : public Produtos{
 
     void mostrarDetalhes(){
         mostrar();
+        cout << " | Marca: " << marca << endl;
     }
 };
 
